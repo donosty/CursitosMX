@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CursitosMX</title>
+    <link rel="stylesheet" href="CSS/normalice.css">
+    <link rel="stylesheet" href="CSS/Styles.css">
+    <link rel="stylesheet" href="CSS/swiper.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+</head>
+<body class="body--principal">
+
+    <div class="alerta-agregado position-fixed bg-success border border-black border-3 bottom-0 d-none">
+        <p>Producto agregado</p>
+    </div>
+
+    <header class="header--principal">
+        <aside class="aside--principal">
+            <div class="container--logo">
+                <img class="logo--principal" src="img/logo22.jpg" alt="logo">
+                <input type="text" placeholder="Buscar un curso" class="input--buscar" id="buscar">
+                <a class="link--principal" href="#"><img src="img/loupe.png" alt="search" class="lupa--principal"></a>
+
+                <div class="carrito--container">
+                    <a href="#" class="abrir-carrito" id="abrir""><img src="img/shopping-cart.png" alt="carro" class="carrito--principal"></a>
+                </div>
+
+                <a class="info1 btn btn-outline-info" href="contacto.html">Contactanos</a>
+                <a class="info1 btn btn-outline-info" href="nosotros.html">Sobre Nosotros</a>
+            </div>
+        </aside>
+    </header>
+
+    <div class="desplegable-container p-4 d-none">
+
+        <div class="row fila-tc">
+            <div class="col d-flex justify-content-center p-3 gap-3">
+                <p class="titulo-desplegable">Carrito</p>
+                <a href="#" id="cerrar-carrito" class="cerrar-desplegable"><img class="cerrar" src="img/cross-mark.png" alt="cancel"></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col columna-tabla">
+                <table class="tabla" id="tabla-carrito">
+                    <thead class="cabeza-tabla">
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Titulo</th>
+                            <th>Precio MXN</th>
+                            <th>ID</th>
+                            <th>Quitar</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="body-tabla" id="table-body">
+
+                        <!--
+                             <tr class="tr-body">
+                            <td class="td-imagen"><img src="img/cursos-img/python.jpg" alt="img"></td>
+                            <td>Curso Python</td>
+                            <td>500</td>
+                            <td>1</td>
+                            <td class="td-quitar"><a href="#"><img class="quitar-curso" src="img/cross-mark.png" alt="quitar"></a></td>
+                            </tr>
+                        -->
+                    </tbody>
+                </table>
+
+                <a href="#" id="comprar" class="btn btn-outline-light mt-5 comprar--carrito"">Realizar compra</a>
+                <a href="#" id="vaciar" class="btn btn-outline-light mt-3 vaciar--carrito">Vaciar carrito</a>
+            </div>
+        </div>
+
+    </div>
+
+    <article class="article--principal">
+        <video src="img/video-robot.mp4" autoplay loop muted class="video--principal"></video>
+        <div class="fondo--negro"></div>
+        <div class="contenido--video">
+            <div class="row fila-1">
+                <div class="col">
+                    <div class="container--descuento--oferta">
+                        <h2>APROVECHA NUESTRAS OFERTAS</h2>
+                        <div class="container--ofertas">
+                            <div class="primer--oferta oferta border border-info-subtle border-3 bg-info bg-opacity-25 text-white p-5 text-center">
+                                <h3>50% en todos nuestros cursos</h3>
+                                <p>-Con profesores preparados</p>
+                                <p>-Foro para nuestros alumnos</p>
+                                <p>-Examenes y practicas</p>
+                                <a class="btn btn-outline-light" href="#cursos-seccion-1">!Los quiero!</a>
+                                <div class="imagen--primer--oferta">
+                                    <img src="img/discount.png" alt="descuento-logo">
+                                </div>
+                            </div>
+    
+                            <div class="segunda--oferta oferta border border-info-subtle border-3 bg-info bg-opacity-25 text-white p-5 text-center">
+                                <h3>Certificado Gratuito</h3>
+                                <p>-Con valor curricular</p>
+                                <p>-Demuestra tu experiencia</p>
+                                <p>-Postulate en cualquier empresa</p>
+                                <a class="btn btn-outline-light boton-of2" id="boton-oferta-2" href="#">!Necesito un certificado!</a>
+                                <div class="imagen--segunda--oferta">
+                                    <img src="img/free.png" alt="gratis-logo">
+                                </div>
+
+                                    <div class="desp-oferta-2 mt-5 d-none">
+                                        <p>Para obtener tu certificado gratuito es necesario adquirir un curso y haberlo completado al 100%</p>
+                                        <div class="cont-video-oferta">
+                                            <video src="img/happy.mp4" autoplay loop muted></video>
+                                        </div>
+                                    </div>
+
+
+                            </div>
+    
+                            <div class="tercer--oferta oferta border border-info-subtle border-3 bg-info bg-opacity-25 text-white p-5 text-center">
+                                <h3>Membresia anual</h3>
+                                <p>-Pago en una sola exchibicion</p>
+                                <p>-Acceso a todos los cursos</p>
+                                <p>-Aprendizaje sin limites</p>
+                                <a class="btn btn-outline-light" href="#sub-anual-tit">!Obtener oferta!</a>
+                                <div class="imagen--tercer--oferta">
+                                    <img src="img/invitation.png" alt="anual-logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row fila-2">
+                <h2>Opiniones de Nuestros Alumnos</h2>
+                <div class="container--opiniones mt-5 d-flex justify-content-center">
+                    <div class="slide--container">
+                        <div class="slide-content">
+                            <div class="card--wrapper swiper-wrapper">
+                                <div class="card swiper-slide">
+                                    <div class="image--content">
+                                        <span class="overlay"></span>
+
+                                        <div class="card--image">
+                                            <img src="img/boy-8847074_1920.jpg" alt="img1" class="card-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p class="name">Jose Sanchez</p>
+                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque sequi accusamus sapiente modi 
+                                            rem eligendi quia error? Cumque ipsum, explicabo minima dignissimos quo placeat perferendis, sit amet architecto rem officiis.</p>
+                                    </div>
+
+                                    <div class="rating-content d-flex justify-content-center gap-2">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                    </div>
+
+                                </div>
+
+                                <div class="card swiper-slide">
+                                    <div class="image--content">
+                                        <span class="overlay"></span>
+
+                                        <div class="card--image">
+                                            <img src="img/boy-8847075_1920.jpg" alt="img1" class="card-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p class="name">Romeo Santos</p>
+                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque sequi accusamus sapiente modi 
+                                            rem eligendi quia error? Cumque ipsum, explicabo minima dignissimos quo placeat perferendis, sit amet architecto rem officiis.</p>
+                                    </div>
+
+                                    <div class="rating-content d-flex justify-content-center gap-2">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                    </div>
+
+                                </div>
+
+                                <div class="card swiper-slide">
+                                    <div class="image--content">
+                                        <span class="overlay"></span>
+
+                                        <div class="card--image">
+                                            <img src="img/female-2835524_1280.jpg" alt="img1" class="card-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p class="name">Elena Nito</p>
+                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque sequi accusamus sapiente modi 
+                                            rem eligendi quia error? Cumque ipsum, explicabo minima dignissimos quo placeat perferendis, sit amet architecto rem officiis.</p>
+                                    </div>
+
+                                    <div class="rating-content d-flex justify-content-center gap-2">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                    </div>
+                                </div>
+
+                                <div class="card swiper-slide">
+                                    <div class="image--content">
+                                        <span class="overlay"></span>
+
+                                        <div class="card--image">
+                                            <img src="img/friend-786908_1280.jpg" alt="img1" class="card-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p class="name">Karla Panini</p>
+                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque sequi accusamus sapiente modi 
+                                            rem eligendi quia error? Cumque ipsum, explicabo minima dignissimos quo placeat perferendis, sit amet architecto rem officiis.</p>
+                                    </div>
+
+                                    <div class="rating-content d-flex justify-content-center gap-2">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                    </div>
+
+                                </div>
+
+                                <div class="card swiper-slide">
+                                    <div class="image--content">
+                                        <span class="overlay"></span>
+
+                                        <div class="card--image">
+                                            <img src="img/girl-748932_1920.jpg" alt="img1" class="card-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p class="name">Carly Mendez</p>
+                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque sequi accusamus sapiente modi 
+                                            rem eligendi quia error? Cumque ipsum, explicabo minima dignissimos quo placeat perferendis, sit amet architecto rem officiis.</p>
+                                    </div>
+
+                                    <div class="rating-content d-flex justify-content-center gap-2">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                    </div>
+
+                                </div>
+
+                                <div class="card swiper-slide">
+                                    <div class="image--content">
+                                        <span class="overlay"></span>
+
+                                        <div class="card--image">
+                                            <img src="img/love-1020869_1920.jpg" alt="img1" class="card-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p class="name">Andrea Legorreta</p>
+                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque sequi accusamus sapiente modi 
+                                            rem eligendi quia error? Cumque ipsum, explicabo minima dignissimos quo placeat perferendis, sit amet architecto rem officiis.</p>
+                                    </div>
+
+                                    <div class="rating-content d-flex justify-content-center gap-2">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                    </div>
+                                </div>
+
+                                <div class="card swiper-slide">
+                                    <div class="image--content">
+                                        <span class="overlay"></span>
+
+                                        <div class="card--image">
+                                            <img src="img/man-8623701_1280.jpg" alt="img1" class="card-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p class="name">Pancho Villa</p>
+                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque sequi accusamus sapiente modi 
+                                            rem eligendi quia error? Cumque ipsum, explicabo minima dignissimos quo placeat perferendis, sit amet architecto rem officiis.</p>
+                                    </div>
+
+                                    <div class="rating-content d-flex justify-content-center gap-2">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                    </div>
+                                </div>
+
+                                <div class="card swiper-slide">
+                                    <div class="image--content">
+                                        <span class="overlay"></span>
+
+                                        <div class="card--image">
+                                            <img src="img/man-8847063_1920.jpg" alt="img1" class="card-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p class="name">Brayan Oconner</p>
+                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque sequi accusamus sapiente modi 
+                                            rem eligendi quia error? Cumque ipsum, explicabo minima dignissimos quo placeat perferendis, sit amet architecto rem officiis.</p>
+                                    </div>
+
+                                    <div class="rating-content d-flex justify-content-center gap-2">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                    </div>
+                                </div>
+
+                                <div class="card swiper-slide">
+                                    <div class="image--content">
+                                        <span class="overlay"></span>
+
+                                        <div class="card--image">
+                                            <img src="img/man-9010303_1920.jpg" alt="img1" class="card-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <p class="name">Luis Miguel</p>
+                                        <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque sequi accusamus sapiente modi 
+                                            rem eligendi quia error? Cumque ipsum, explicabo minima dignissimos quo placeat perferendis, sit amet architecto rem officiis.</p>
+                                    </div>
+
+                                    <div class="rating-content d-flex justify-content-center gap-2">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                        <img src="img/favorite.png" alt="favorito">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <section class="section--principal">
+        <div class="container--section" id="contenedor-cursos">
+
+            <div class="row fila-1-container mb-5 mt-2" id="cursos-seccion-1">
+
+                <div class="col d-flex justify-content-evenly">
+                    <div class="curso curso-1">
+                        <p class="titulo-curso">Curso Python</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso" src="img/cursos-img/python.jpg" alt="python">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="1">Agregar al carrito</a>
+                    </div>
+                    <div class="curso curso-2">
+                        <p class="titulo-curso">Curso JavaScript</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso" src="img/cursos-img/JS.png" alt="javascript">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="2">Agregar al carrito</a>
+                    </div>
+                    <div class="curso curso-3">
+                        <p class="titulo-curso">Curso CSS</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso" src="img/cursos-img/css.png" alt="css">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="3">Agregar al carrito</a>
+                    </div>
+                    <div class="curso curso-4">
+                        <p class="titulo-curso">Curso HTML</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso" src="img/cursos-img/html.png" alt="html">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="4">Agregar al carrito</a>
+                    </div>
+                </div>
+                
+
+            </div>
+
+            <div class="row fila-2-container mt-5 mb-5">
+
+                <div class="col d-flex justify-content-evenly">
+                    <div class="curso curso-5">
+                        <p class="titulo-curso">Curso Java</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso img-java" src="img/cursos-img/java.jpg" alt="java">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="5">Agregar al carrito</a>
+                    </div>
+                    <div class="curso curso-6">
+                        <p class="titulo-curso">Curso Kotlin</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso img-kotlin" src="img/cursos-img/kotlin.png" alt="kotlin">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="6">Agregar al carrito</a>
+                    </div>
+                    <div class="curso curso-7">
+                        <p class="titulo-curso">Curso Ruby</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso" src="img/cursos-img/ruby.jpg" alt="ruby">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="7">Agregar al carrito</a>
+                    </div>
+                    <div class="curso curso-8">
+                        <p class="titulo-curso">Curso TypeScript</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso" src="img/cursos-img/typescript.png" alt="ts">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="8">Agregar al carrito</a>
+                    </div>
+                </div>
+                
+
+            </div>
+
+            <div class="row fila-3-container">
+
+                <div class="col d-flex justify-content-evenly">
+                    <div class="curso curso-9">
+                        <p class="titulo-curso">Curso Git+Github</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso" src="img/cursos-img/github.webp" alt="git">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="9">Agregar al carrito</a>
+                    </div>
+                    <div class="curso curso-10">
+                        <p class="titulo-curso">Curso Docker</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso" src="img/cursos-img/docker_logo.jpg" alt="docker">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="10">Agregar al carrito</a>
+                    </div>
+                    <div class="curso curso-11">
+                        <p class="titulo-curso">Curso Bash</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso" src="img/cursos-img/bash2.png" alt="bash">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="11">Agregar al carrito</a>
+                    </div>
+                    <div class="curso curso-12">
+                        <p class="titulo-curso">Curso SQL</p>
+                        <div class="cont-imagen-curso">
+                            <img class="imagen-curso img-sql" src="img/cursos-img/sql.jpeg" alt="sql">
+                        </div>
+                        <div class="container-textos-curso d-flex justify-content-center align-items-center gap-3 mt-3">
+                            <p class="precio-falso"><del>$1000</del></p>
+                            <p class="precio-descuento">$500</p>
+                        </div>
+                        <p class="texto-curso">!*Ahorro de 50% en cualquier compra*!</p>
+                        <a class="boton-curso" data-id="12">Agregar al carrito</a>
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div class="row fila-4-container">
+               <div class="col d-flex justify-content-center">
+                    <div class="suscripcion">
+                        <p class="titulo-suscripcion" id="sub-anual-tit">Suscripcion anual</p>
+                        <div class="imagen-sub">
+                            <img src="img/annual.png" alt="anual" class="img-sub-anual">
+                        </div>
+                        <div class="container-precios-sub d-flex justify-content-center align-items-center gap-2">
+                            <p class="precio-sub-falso"><del>$5000</del></p>
+                            <p class="precio-sub-descuento">$2000</p>
+                        </div>
+                        <div class="ahorro-sub">
+                            <p class="titulo-ahorro-sub">!Ahorro del 40%!</p>
+                        </div>
+                        <p class="texto-sub mt-4">* Cada mes te sale en $166 MXN *</p>
+                        <div class="container-link-sub d-flex justify-content-center align-items-center mt-5">
+                            <a href="#" class="boton-sub" data-id="13">Unirte a Premiun</a>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container--footer">
+            <div class="footer-links">
+                <a href="#">Aviso de privacidad</a>
+                <a href="#">Proximos cursos</a>
+            </div>
+            <p>TODOS LOS DERECHOS RESERVADOS</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="JS/swipe.js"></script>
+
+    <script src="JS/slide.js"></script>
+
+    <script src="JS/desplegable.js"></script>
+
+</body>
+</html>
