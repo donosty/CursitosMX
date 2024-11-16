@@ -169,7 +169,7 @@ p{
     }
 }
 
-@media(max-width:1404px){
+@media(max-width:1430px){
 
     .carrito--container{
 
@@ -527,6 +527,19 @@ p{
 }
 
 /* OPINIONES */
+
+.container--opiniones{
+
+    margin-top: 3rem;
+}
+
+@media(max-width:1600){
+    
+    .container--opiniones{
+
+        margin-top: 0;
+    }
+}
 
 .slide--container{
 
