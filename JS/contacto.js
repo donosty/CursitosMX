@@ -95,9 +95,9 @@ const objeto = {
   
   function validarEmail(email){
   
-    const regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/ 
-          const resultado = regex.test(email);
-          return resultado;
+    const regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/
+    const resultado = regex.test(email);
+    return resultado;
   }
   
   function comprobarEdad(e){
@@ -153,8 +153,6 @@ const objeto = {
   }
   
   function comprobarObjeto(){
-  
-    console.log(objeto);
   
     if(Object.values(objeto).includes('') || ((objeto.edad < 18 || objeto.edad > 99)) || isNaN(objeto.edad) || objeto.genero === 'seleccionar'){
   

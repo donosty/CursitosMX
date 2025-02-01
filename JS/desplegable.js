@@ -56,7 +56,7 @@ function cargarEventListeners(){
         texto.textContent = 'Compra realizada';
         texto.classList.add("bg-success", "text-light", "text-center", "mt-4", "alertas-width");
 
-        articulosCarrito.forEach(function(curso){
+        articulosCarrito.forEach( curso =>{
 
             if(curso){
 
@@ -73,9 +73,7 @@ function cargarEventListeners(){
                 return;
             }
         })
-
     });
-
 
 }
 
@@ -182,15 +180,15 @@ function crearHTML(){
                 </a>
             </td>
         `
-        tablaCarrito.appendChild(fila);
+        bodyTable.appendChild(fila);
     })
 }
 
 function limpiarHTML(){
 
-    while(tablaCarrito.children[1]){
+    while(bodyTable.children[0]){
 
-        tablaCarrito.removeChild(tablaCarrito.children[1])
+        bodyTable.removeChild(bodyTable.children[0])
     }
 }
 
